@@ -59,8 +59,10 @@ export function Eyebrow({ children, light = false }: { children: ReactNode, ligh
   return <p className={`eyebrow${light ? ' eyebrow-light' : ''}`}><span></span>{children}</p>
 }
 
-export function PageHero({ index, title, intro, children }: { index: string, title: string, intro: string, children?: ReactNode }) {
-  return <section className="page-hero">
+export function PageHero({ index, title, intro, children, image = '/assets/yukti-engineering-hero.webp', imageAlt = 'YUKTI multidisciplinary engineering infrastructure' }: { index: string, title: string, intro: string, children?: ReactNode, image?: string, imageAlt?: string }) {
+  return <section className="page-hero page-hero-image-led">
+    <img className="page-hero-image" src={image} alt={imageAlt} fetchPriority="high" />
+    <div className="page-hero-shade"></div>
     <div className="page-hero-grid">
       <Eyebrow light>{index} / YUKTI</Eyebrow>
       <h1>{title}</h1>
@@ -87,7 +89,7 @@ export function ContactBay() {
 
 export function ServiceDetail({ service }: { service: (typeof services)[number] }) {
   return <main>
-    <PageHero index={service.index} title={service.title} intro={service.intro}>
+    <PageHero index={service.index} title={service.title} intro={service.intro} image={service.image} imageAlt={service.imageAlt}>
       <a className="button button-gold" href="/contact">Discuss a requirement <span>↗</span></a>
     </PageHero>
     {service.image && <figure className="detail-image"><img src={service.image} alt={service.imageAlt} /></figure>}
