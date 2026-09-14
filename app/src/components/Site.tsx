@@ -90,7 +90,7 @@ export function Eyebrow({ children, light = false }: { children: ReactNode, ligh
   return <p className={`eyebrow${light ? ' eyebrow-light' : ''}`}><span></span>{children}</p>
 }
 
-export function PageHero({ index, title, intro, children, image = '/assets/yukti-engineering-hero.webp', imageAlt = 'YUKTI multidisciplinary engineering infrastructure', showTechnicalMark = true }: { index: string, title: string, intro: string, children?: ReactNode, image?: string, imageAlt?: string, showTechnicalMark?: boolean }) {
+export function PageHero({ index, title, intro, children, image = '/assets/yukti-engineering-hero.webp', imageAlt = 'YUKTI multidisciplinary engineering infrastructure' }: { index: string, title: string, intro: string, children?: ReactNode, image?: string, imageAlt?: string }) {
   return <section className="page-hero page-hero-image-led">
     <img className="page-hero-image" src={image} alt={imageAlt} fetchPriority="high" />
     <div className="page-hero-shade"></div>
@@ -100,7 +100,6 @@ export function PageHero({ index, title, intro, children, image = '/assets/yukti
       <p>{intro}</p>
       {children}
     </div>
-    {showTechnicalMark && <div className="technical-mark" aria-hidden="true"><span></span><span></span><b>Y</b></div>}
   </section>
 }
 
@@ -120,7 +119,7 @@ export function ContactBay() {
 
 export function ServiceDetail({ service }: { service: (typeof services)[number] }) {
   return <main>
-    <PageHero index={service.index} title={service.title} intro={service.intro} image={service.image} imageAlt={service.imageAlt} showTechnicalMark={false}>
+    <PageHero index={service.index} title={service.title} intro={service.intro} image={service.image} imageAlt={service.imageAlt}>
       <a className="button button-gold" href="/contact">Discuss a requirement <span><ArrowUpRight /></span></a>
     </PageHero>
     <section className="detail-grid page-section">
