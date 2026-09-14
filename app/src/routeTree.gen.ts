@@ -9,13 +9,40 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SectorsRouteImport } from './routes/sectors'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesProjectSupportRouteImport } from './routes/services.project-support'
+import { Route as ServicesMechanicalEngineeringRouteImport } from './routes/services.mechanical-engineering'
+import { Route as ServicesElectricalEngineeringRouteImport } from './routes/services.electrical-engineering'
+import { Route as ServicesDesignDocumentationRouteImport } from './routes/services.design-documentation'
+import { Route as ServicesCivilStructuralEngineeringRouteImport } from './routes/services.civil-structural-engineering'
+import { Route as ServicesAuditRootCauseAnalysisRouteImport } from './routes/services.audit-root-cause-analysis'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SectorsRoute = SectorsRouteImport.update({
+  id: '/sectors',
+  path: '/sectors',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
@@ -23,49 +50,208 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesProjectSupportRoute = ServicesProjectSupportRouteImport.update({
+  id: '/project-support',
+  path: '/project-support',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesMechanicalEngineeringRoute =
+  ServicesMechanicalEngineeringRouteImport.update({
+    id: '/mechanical-engineering',
+    path: '/mechanical-engineering',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesElectricalEngineeringRoute =
+  ServicesElectricalEngineeringRouteImport.update({
+    id: '/electrical-engineering',
+    path: '/electrical-engineering',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesDesignDocumentationRoute =
+  ServicesDesignDocumentationRouteImport.update({
+    id: '/design-documentation',
+    path: '/design-documentation',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesCivilStructuralEngineeringRoute =
+  ServicesCivilStructuralEngineeringRouteImport.update({
+    id: '/civil-structural-engineering',
+    path: '/civil-structural-engineering',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesAuditRootCauseAnalysisRoute =
+  ServicesAuditRootCauseAnalysisRouteImport.update({
+    id: '/audit-root-cause-analysis',
+    path: '/audit-root-cause-analysis',
+    getParentRoute: () => ServicesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/robots.txt': typeof RobotsDottxtRoute
+  '/sectors': typeof SectorsRoute
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
+  '/services/audit-root-cause-analysis': typeof ServicesAuditRootCauseAnalysisRoute
+  '/services/civil-structural-engineering': typeof ServicesCivilStructuralEngineeringRoute
+  '/services/design-documentation': typeof ServicesDesignDocumentationRoute
+  '/services/electrical-engineering': typeof ServicesElectricalEngineeringRoute
+  '/services/mechanical-engineering': typeof ServicesMechanicalEngineeringRoute
+  '/services/project-support': typeof ServicesProjectSupportRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/robots.txt': typeof RobotsDottxtRoute
+  '/sectors': typeof SectorsRoute
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
+  '/services/audit-root-cause-analysis': typeof ServicesAuditRootCauseAnalysisRoute
+  '/services/civil-structural-engineering': typeof ServicesCivilStructuralEngineeringRoute
+  '/services/design-documentation': typeof ServicesDesignDocumentationRoute
+  '/services/electrical-engineering': typeof ServicesElectricalEngineeringRoute
+  '/services/mechanical-engineering': typeof ServicesMechanicalEngineeringRoute
+  '/services/project-support': typeof ServicesProjectSupportRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/robots.txt': typeof RobotsDottxtRoute
+  '/sectors': typeof SectorsRoute
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
+  '/services/audit-root-cause-analysis': typeof ServicesAuditRootCauseAnalysisRoute
+  '/services/civil-structural-engineering': typeof ServicesCivilStructuralEngineeringRoute
+  '/services/design-documentation': typeof ServicesDesignDocumentationRoute
+  '/services/electrical-engineering': typeof ServicesElectricalEngineeringRoute
+  '/services/mechanical-engineering': typeof ServicesMechanicalEngineeringRoute
+  '/services/project-support': typeof ServicesProjectSupportRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/robots.txt' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/privacy-policy'
+    | '/robots.txt'
+    | '/sectors'
+    | '/services'
+    | '/sitemap.xml'
+    | '/terms'
+    | '/services/audit-root-cause-analysis'
+    | '/services/civil-structural-engineering'
+    | '/services/design-documentation'
+    | '/services/electrical-engineering'
+    | '/services/mechanical-engineering'
+    | '/services/project-support'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/robots.txt' | '/sitemap.xml'
-  id: '__root__' | '/' | '/robots.txt' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/privacy-policy'
+    | '/robots.txt'
+    | '/sectors'
+    | '/services'
+    | '/sitemap.xml'
+    | '/terms'
+    | '/services/audit-root-cause-analysis'
+    | '/services/civil-structural-engineering'
+    | '/services/design-documentation'
+    | '/services/electrical-engineering'
+    | '/services/mechanical-engineering'
+    | '/services/project-support'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/privacy-policy'
+    | '/robots.txt'
+    | '/sectors'
+    | '/services'
+    | '/sitemap.xml'
+    | '/terms'
+    | '/services/audit-root-cause-analysis'
+    | '/services/civil-structural-engineering'
+    | '/services/design-documentation'
+    | '/services/electrical-engineering'
+    | '/services/mechanical-engineering'
+    | '/services/project-support'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
+  SectorsRoute: typeof SectorsRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sectors': {
+      id: '/sectors'
+      path: '/sectors'
+      fullPath: '/sectors'
+      preLoaderRoute: typeof SectorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/robots.txt': {
@@ -75,6 +261,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -82,13 +289,84 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/project-support': {
+      id: '/services/project-support'
+      path: '/project-support'
+      fullPath: '/services/project-support'
+      preLoaderRoute: typeof ServicesProjectSupportRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/mechanical-engineering': {
+      id: '/services/mechanical-engineering'
+      path: '/mechanical-engineering'
+      fullPath: '/services/mechanical-engineering'
+      preLoaderRoute: typeof ServicesMechanicalEngineeringRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/electrical-engineering': {
+      id: '/services/electrical-engineering'
+      path: '/electrical-engineering'
+      fullPath: '/services/electrical-engineering'
+      preLoaderRoute: typeof ServicesElectricalEngineeringRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/design-documentation': {
+      id: '/services/design-documentation'
+      path: '/design-documentation'
+      fullPath: '/services/design-documentation'
+      preLoaderRoute: typeof ServicesDesignDocumentationRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/civil-structural-engineering': {
+      id: '/services/civil-structural-engineering'
+      path: '/civil-structural-engineering'
+      fullPath: '/services/civil-structural-engineering'
+      preLoaderRoute: typeof ServicesCivilStructuralEngineeringRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/audit-root-cause-analysis': {
+      id: '/services/audit-root-cause-analysis'
+      path: '/audit-root-cause-analysis'
+      fullPath: '/services/audit-root-cause-analysis'
+      preLoaderRoute: typeof ServicesAuditRootCauseAnalysisRouteImport
+      parentRoute: typeof ServicesRoute
+    }
   }
 }
 
+interface ServicesRouteChildren {
+  ServicesAuditRootCauseAnalysisRoute: typeof ServicesAuditRootCauseAnalysisRoute
+  ServicesCivilStructuralEngineeringRoute: typeof ServicesCivilStructuralEngineeringRoute
+  ServicesDesignDocumentationRoute: typeof ServicesDesignDocumentationRoute
+  ServicesElectricalEngineeringRoute: typeof ServicesElectricalEngineeringRoute
+  ServicesMechanicalEngineeringRoute: typeof ServicesMechanicalEngineeringRoute
+  ServicesProjectSupportRoute: typeof ServicesProjectSupportRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesAuditRootCauseAnalysisRoute: ServicesAuditRootCauseAnalysisRoute,
+  ServicesCivilStructuralEngineeringRoute:
+    ServicesCivilStructuralEngineeringRoute,
+  ServicesDesignDocumentationRoute: ServicesDesignDocumentationRoute,
+  ServicesElectricalEngineeringRoute: ServicesElectricalEngineeringRoute,
+  ServicesMechanicalEngineeringRoute: ServicesMechanicalEngineeringRoute,
+  ServicesProjectSupportRoute: ServicesProjectSupportRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
+  SectorsRoute: SectorsRoute,
+  ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -304,7 +304,7 @@ export function GenerationDetailModal({ trigger, generation, open, onOpenChange,
  */
 export function GenerationDetailDemo() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-q-background-primary p-8">
+    <div className="flex min-h-dvh items-center justify-center bg-q-background-primary p-8">
       <GenerationDetailModal
         trigger={<Button variant="primary" size="md">Open generation</Button>}
       />

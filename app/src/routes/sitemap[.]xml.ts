@@ -1,29 +1,3 @@
 import { createFileRoute } from '@tanstack/react-router'
-
-export const Route = createFileRoute('/sitemap.xml')({
-  server: {
-    handlers: {
-      GET: async ({ request }) => {
-        const origin = new URL(request.url).origin
-        const today = new Date().toISOString().split('T')[0]
-        const xml = [
-          '<?xml version="1.0" encoding="UTF-8"?>',
-          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-          '  <url>',
-          `    <loc>${origin}/</loc>`,
-          `    <lastmod>${today}</lastmod>`,
-          '    <changefreq>weekly</changefreq>',
-          '    <priority>1.0</priority>',
-          '  </url>',
-          '</urlset>',
-        ].join('\n')
-        return new Response(xml, {
-          headers: {
-            'Content-Type': 'application/xml; charset=utf-8',
-            'Cache-Control': 'public, max-age=3600',
-          },
-        })
-      },
-    },
-  },
-})
+const paths = ['/', '/about', '/services', '/services/electrical-engineering', '/services/civil-structural-engineering', '/services/mechanical-engineering', '/services/audit-root-cause-analysis', '/services/design-documentation', '/services/project-support', '/sectors', '/contact', '/privacy-policy', '/terms']
+export const Route = createFileRoute('/sitemap.xml')({ server: { handlers: { GET: async ({ request }) => { const origin = new URL(request.url).origin; const today = new Date().toISOString().slice(0,10); const entries = paths.map((path,i)=>`  <url><loc>${origin}${path}</loc><lastmod>${today}</lastmod><changefreq>${i===0?'weekly':'monthly'}</changefreq><priority>${i===0?'1.0':'0.8'}</priority></url>`).join('\n'); return new Response(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>`, { headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' } }) } } } })
