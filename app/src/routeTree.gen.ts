@@ -18,12 +18,12 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesProjectSupportRouteImport } from './routes/services.project-support'
-import { Route as ServicesMechanicalEngineeringRouteImport } from './routes/services.mechanical-engineering'
-import { Route as ServicesElectricalEngineeringRouteImport } from './routes/services.electrical-engineering'
-import { Route as ServicesDesignDocumentationRouteImport } from './routes/services.design-documentation'
-import { Route as ServicesCivilStructuralEngineeringRouteImport } from './routes/services.civil-structural-engineering'
-import { Route as ServicesAuditRootCauseAnalysisRouteImport } from './routes/services.audit-root-cause-analysis'
+import { Route as ServicesProjectSupportRouteImport } from './routes/services_.project-support'
+import { Route as ServicesMechanicalEngineeringRouteImport } from './routes/services_.mechanical-engineering'
+import { Route as ServicesElectricalEngineeringRouteImport } from './routes/services_.electrical-engineering'
+import { Route as ServicesDesignDocumentationRouteImport } from './routes/services_.design-documentation'
+import { Route as ServicesCivilStructuralEngineeringRouteImport } from './routes/services_.civil-structural-engineering'
+import { Route as ServicesAuditRootCauseAnalysisRouteImport } from './routes/services_.audit-root-cause-analysis'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -71,39 +71,39 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesProjectSupportRoute = ServicesProjectSupportRouteImport.update({
-  id: '/project-support',
-  path: '/project-support',
-  getParentRoute: () => ServicesRoute,
+  id: '/services_/project-support',
+  path: '/services/project-support',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesMechanicalEngineeringRoute =
   ServicesMechanicalEngineeringRouteImport.update({
-    id: '/mechanical-engineering',
-    path: '/mechanical-engineering',
-    getParentRoute: () => ServicesRoute,
+    id: '/services_/mechanical-engineering',
+    path: '/services/mechanical-engineering',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesElectricalEngineeringRoute =
   ServicesElectricalEngineeringRouteImport.update({
-    id: '/electrical-engineering',
-    path: '/electrical-engineering',
-    getParentRoute: () => ServicesRoute,
+    id: '/services_/electrical-engineering',
+    path: '/services/electrical-engineering',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesDesignDocumentationRoute =
   ServicesDesignDocumentationRouteImport.update({
-    id: '/design-documentation',
-    path: '/design-documentation',
-    getParentRoute: () => ServicesRoute,
+    id: '/services_/design-documentation',
+    path: '/services/design-documentation',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesCivilStructuralEngineeringRoute =
   ServicesCivilStructuralEngineeringRouteImport.update({
-    id: '/civil-structural-engineering',
-    path: '/civil-structural-engineering',
-    getParentRoute: () => ServicesRoute,
+    id: '/services_/civil-structural-engineering',
+    path: '/services/civil-structural-engineering',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesAuditRootCauseAnalysisRoute =
   ServicesAuditRootCauseAnalysisRouteImport.update({
-    id: '/audit-root-cause-analysis',
-    path: '/audit-root-cause-analysis',
-    getParentRoute: () => ServicesRoute,
+    id: '/services_/audit-root-cause-analysis',
+    path: '/services/audit-root-cause-analysis',
+    getParentRoute: () => rootRouteImport,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -113,7 +113,7 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sectors': typeof SectorsRoute
-  '/services': typeof ServicesRouteWithChildren
+  '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/services/audit-root-cause-analysis': typeof ServicesAuditRootCauseAnalysisRoute
@@ -130,7 +130,7 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sectors': typeof SectorsRoute
-  '/services': typeof ServicesRouteWithChildren
+  '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/services/audit-root-cause-analysis': typeof ServicesAuditRootCauseAnalysisRoute
@@ -148,15 +148,15 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sectors': typeof SectorsRoute
-  '/services': typeof ServicesRouteWithChildren
+  '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
-  '/services/audit-root-cause-analysis': typeof ServicesAuditRootCauseAnalysisRoute
-  '/services/civil-structural-engineering': typeof ServicesCivilStructuralEngineeringRoute
-  '/services/design-documentation': typeof ServicesDesignDocumentationRoute
-  '/services/electrical-engineering': typeof ServicesElectricalEngineeringRoute
-  '/services/mechanical-engineering': typeof ServicesMechanicalEngineeringRoute
-  '/services/project-support': typeof ServicesProjectSupportRoute
+  '/services_/audit-root-cause-analysis': typeof ServicesAuditRootCauseAnalysisRoute
+  '/services_/civil-structural-engineering': typeof ServicesCivilStructuralEngineeringRoute
+  '/services_/design-documentation': typeof ServicesDesignDocumentationRoute
+  '/services_/electrical-engineering': typeof ServicesElectricalEngineeringRoute
+  '/services_/mechanical-engineering': typeof ServicesMechanicalEngineeringRoute
+  '/services_/project-support': typeof ServicesProjectSupportRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -204,12 +204,12 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/terms'
-    | '/services/audit-root-cause-analysis'
-    | '/services/civil-structural-engineering'
-    | '/services/design-documentation'
-    | '/services/electrical-engineering'
-    | '/services/mechanical-engineering'
-    | '/services/project-support'
+    | '/services_/audit-root-cause-analysis'
+    | '/services_/civil-structural-engineering'
+    | '/services_/design-documentation'
+    | '/services_/electrical-engineering'
+    | '/services_/mechanical-engineering'
+    | '/services_/project-support'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -219,9 +219,15 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SectorsRoute: typeof SectorsRoute
-  ServicesRoute: typeof ServicesRouteWithChildren
+  ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  ServicesAuditRootCauseAnalysisRoute: typeof ServicesAuditRootCauseAnalysisRoute
+  ServicesCivilStructuralEngineeringRoute: typeof ServicesCivilStructuralEngineeringRoute
+  ServicesDesignDocumentationRoute: typeof ServicesDesignDocumentationRoute
+  ServicesElectricalEngineeringRoute: typeof ServicesElectricalEngineeringRoute
+  ServicesMechanicalEngineeringRoute: typeof ServicesMechanicalEngineeringRoute
+  ServicesProjectSupportRoute: typeof ServicesProjectSupportRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -289,73 +295,50 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/project-support': {
-      id: '/services/project-support'
-      path: '/project-support'
+    '/services_/project-support': {
+      id: '/services_/project-support'
+      path: '/services/project-support'
       fullPath: '/services/project-support'
       preLoaderRoute: typeof ServicesProjectSupportRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/services/mechanical-engineering': {
-      id: '/services/mechanical-engineering'
-      path: '/mechanical-engineering'
+    '/services_/mechanical-engineering': {
+      id: '/services_/mechanical-engineering'
+      path: '/services/mechanical-engineering'
       fullPath: '/services/mechanical-engineering'
       preLoaderRoute: typeof ServicesMechanicalEngineeringRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/services/electrical-engineering': {
-      id: '/services/electrical-engineering'
-      path: '/electrical-engineering'
+    '/services_/electrical-engineering': {
+      id: '/services_/electrical-engineering'
+      path: '/services/electrical-engineering'
       fullPath: '/services/electrical-engineering'
       preLoaderRoute: typeof ServicesElectricalEngineeringRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/services/design-documentation': {
-      id: '/services/design-documentation'
-      path: '/design-documentation'
+    '/services_/design-documentation': {
+      id: '/services_/design-documentation'
+      path: '/services/design-documentation'
       fullPath: '/services/design-documentation'
       preLoaderRoute: typeof ServicesDesignDocumentationRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/services/civil-structural-engineering': {
-      id: '/services/civil-structural-engineering'
-      path: '/civil-structural-engineering'
+    '/services_/civil-structural-engineering': {
+      id: '/services_/civil-structural-engineering'
+      path: '/services/civil-structural-engineering'
       fullPath: '/services/civil-structural-engineering'
       preLoaderRoute: typeof ServicesCivilStructuralEngineeringRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/services/audit-root-cause-analysis': {
-      id: '/services/audit-root-cause-analysis'
-      path: '/audit-root-cause-analysis'
+    '/services_/audit-root-cause-analysis': {
+      id: '/services_/audit-root-cause-analysis'
+      path: '/services/audit-root-cause-analysis'
       fullPath: '/services/audit-root-cause-analysis'
       preLoaderRoute: typeof ServicesAuditRootCauseAnalysisRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
-
-interface ServicesRouteChildren {
-  ServicesAuditRootCauseAnalysisRoute: typeof ServicesAuditRootCauseAnalysisRoute
-  ServicesCivilStructuralEngineeringRoute: typeof ServicesCivilStructuralEngineeringRoute
-  ServicesDesignDocumentationRoute: typeof ServicesDesignDocumentationRoute
-  ServicesElectricalEngineeringRoute: typeof ServicesElectricalEngineeringRoute
-  ServicesMechanicalEngineeringRoute: typeof ServicesMechanicalEngineeringRoute
-  ServicesProjectSupportRoute: typeof ServicesProjectSupportRoute
-}
-
-const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesAuditRootCauseAnalysisRoute: ServicesAuditRootCauseAnalysisRoute,
-  ServicesCivilStructuralEngineeringRoute:
-    ServicesCivilStructuralEngineeringRoute,
-  ServicesDesignDocumentationRoute: ServicesDesignDocumentationRoute,
-  ServicesElectricalEngineeringRoute: ServicesElectricalEngineeringRoute,
-  ServicesMechanicalEngineeringRoute: ServicesMechanicalEngineeringRoute,
-  ServicesProjectSupportRoute: ServicesProjectSupportRoute,
-}
-
-const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
-  ServicesRouteChildren,
-)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -364,9 +347,16 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SectorsRoute: SectorsRoute,
-  ServicesRoute: ServicesRouteWithChildren,
+  ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  ServicesAuditRootCauseAnalysisRoute: ServicesAuditRootCauseAnalysisRoute,
+  ServicesCivilStructuralEngineeringRoute:
+    ServicesCivilStructuralEngineeringRoute,
+  ServicesDesignDocumentationRoute: ServicesDesignDocumentationRoute,
+  ServicesElectricalEngineeringRoute: ServicesElectricalEngineeringRoute,
+  ServicesMechanicalEngineeringRoute: ServicesMechanicalEngineeringRoute,
+  ServicesProjectSupportRoute: ServicesProjectSupportRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
