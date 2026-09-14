@@ -18,13 +18,13 @@ export function SiteHeader() {
     </a>
     <nav className="desktop-nav" aria-label="Primary navigation">
       <a href="/about">About</a>
-      <details className="services-dropdown">
-        <summary>Services <span aria-hidden="true">+</span></summary>
+      <div className="services-dropdown">
+        <a className="services-trigger" href="/services" aria-haspopup="true">Services <span className="dropdown-arrow" aria-hidden="true">⌄</span></a>
         <div className="services-mega">
           <div className="services-mega-intro"><small>01 / EXPERTISE</small><strong>Engineering depth across every project layer.</strong><a href="/services">View all services <span>↗</span></a></div>
           <div className="services-mega-links">{services.map((item) => <a key={item.slug} href={`/services/${item.slug}`}><span>{item.index}</span><strong>{item.title}</strong><b>↗</b></a>)}</div>
         </div>
-      </details>
+      </div>
       <a href="/sectors">Sectors</a>
       <a href="/contact">Contact</a>
       <a className="nav-cta" href={contact.emailHref}>Start a conversation <span>↗</span></a>
@@ -33,7 +33,7 @@ export function SiteHeader() {
       <summary aria-label="Open navigation"><span className="menu-label"><small>Explore</small><strong>Menu</strong></span><i aria-hidden="true"><b></b></i></summary>
       <nav aria-label="Mobile navigation">
         <div className="mobile-menu-head"><img src="/assets/yukti-logo-mark.png" alt="" /><span>YEP / NAVIGATION 01</span></div>
-        <div className="mobile-nav-links">{nav.map(([label, href], index) => <a key={href} href={href}><span>0{index + 1}</span><strong>{label}</strong><b>↗</b></a>)}</div>
+        <div className="mobile-nav-links">{nav.map(([label, href], index) => label === 'Services' ? <details className="mobile-services-dropdown" key={href}><summary><span>0{index + 1}</span><strong>Services</strong><b>⌄</b></summary><div><a href="/services"><span>00</span><strong>All services</strong><b>↗</b></a>{services.map((item) => <a key={item.slug} href={`/services/${item.slug}`}><span>{item.index}</span><strong>{item.title}</strong><b>↗</b></a>)}</div></details> : <a key={href} href={href}><span>0{index + 1}</span><strong>{label}</strong><b>↗</b></a>)}</div>
         <div className="mobile-menu-contact"><p>Engineering support starts with a clear conversation.</p><a href={contact.emailHref}>Start a conversation <span>↗</span></a><a href={contact.phoneHref}>{contact.phone}</a></div>
       </nav>
     </details>
