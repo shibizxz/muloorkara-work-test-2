@@ -9,55 +9,25 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as SectorsRouteImport } from './routes/sectors'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
-import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesProjectSupportRouteImport } from './routes/services_.project-support'
-import { Route as ServicesMechanicalEngineeringRouteImport } from './routes/services_.mechanical-engineering'
-import { Route as ServicesElectricalEngineeringRouteImport } from './routes/services_.electrical-engineering'
-import { Route as ServicesDesignDocumentationRouteImport } from './routes/services_.design-documentation'
-import { Route as ServicesCivilStructuralEngineeringRouteImport } from './routes/services_.civil-structural-engineering'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SectorsRouteImport } from './routes/sectors'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ServicesAuditRootCauseAnalysisRouteImport } from './routes/services_.audit-root-cause-analysis'
+import { Route as ServicesCivilStructuralEngineeringRouteImport } from './routes/services_.civil-structural-engineering'
+import { Route as ServicesDesignDocumentationRouteImport } from './routes/services_.design-documentation'
+import { Route as ServicesElectricalEngineeringRouteImport } from './routes/services_.electrical-engineering'
+import { Route as ServicesMechanicalEngineeringRouteImport } from './routes/services_.mechanical-engineering'
+import { Route as ServicesProjectSupportRouteImport } from './routes/services_.project-support'
 
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SectorsRoute = SectorsRouteImport.update({
-  id: '/sectors',
-  path: '/sectors',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
-  id: '/robots.txt',
-  path: '/robots.txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
-  id: '/privacy-policy',
-  path: '/privacy-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -65,32 +35,45 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesProjectSupportRoute = ServicesProjectSupportRouteImport.update({
-  id: '/services_/project-support',
-  path: '/services/project-support',
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesMechanicalEngineeringRoute =
-  ServicesMechanicalEngineeringRouteImport.update({
-    id: '/services_/mechanical-engineering',
-    path: '/services/mechanical-engineering',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServicesElectricalEngineeringRoute =
-  ServicesElectricalEngineeringRouteImport.update({
-    id: '/services_/electrical-engineering',
-    path: '/services/electrical-engineering',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServicesDesignDocumentationRoute =
-  ServicesDesignDocumentationRouteImport.update({
-    id: '/services_/design-documentation',
-    path: '/services/design-documentation',
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SectorsRoute = SectorsRouteImport.update({
+  id: '/sectors',
+  path: '/sectors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesAuditRootCauseAnalysisRoute =
+  ServicesAuditRootCauseAnalysisRouteImport.update({
+    id: '/services_/audit-root-cause-analysis',
+    path: '/services/audit-root-cause-analysis',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesCivilStructuralEngineeringRoute =
@@ -99,12 +82,29 @@ const ServicesCivilStructuralEngineeringRoute =
     path: '/services/civil-structural-engineering',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServicesAuditRootCauseAnalysisRoute =
-  ServicesAuditRootCauseAnalysisRouteImport.update({
-    id: '/services_/audit-root-cause-analysis',
-    path: '/services/audit-root-cause-analysis',
+const ServicesDesignDocumentationRoute =
+  ServicesDesignDocumentationRouteImport.update({
+    id: '/services_/design-documentation',
+    path: '/services/design-documentation',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ServicesElectricalEngineeringRoute =
+  ServicesElectricalEngineeringRouteImport.update({
+    id: '/services_/electrical-engineering',
+    path: '/services/electrical-engineering',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesMechanicalEngineeringRoute =
+  ServicesMechanicalEngineeringRouteImport.update({
+    id: '/services_/mechanical-engineering',
+    path: '/services/mechanical-engineering',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesProjectSupportRoute = ServicesProjectSupportRouteImport.update({
+  id: '/services_/project-support',
+  path: '/services/project-support',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -232,53 +232,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sectors': {
-      id: '/sectors'
-      path: '/sectors'
-      fullPath: '/sectors'
-      preLoaderRoute: typeof SectorsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/robots.txt': {
-      id: '/robots.txt'
-      path: '/robots.txt'
-      fullPath: '/robots.txt'
-      preLoaderRoute: typeof RobotsDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy-policy': {
-      id: '/privacy-policy'
-      path: '/privacy-policy'
-      fullPath: '/privacy-policy'
-      preLoaderRoute: typeof PrivacyPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -288,39 +246,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services_/project-support': {
-      id: '/services_/project-support'
-      path: '/services/project-support'
-      fullPath: '/services/project-support'
-      preLoaderRoute: typeof ServicesProjectSupportRouteImport
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services_/mechanical-engineering': {
-      id: '/services_/mechanical-engineering'
-      path: '/services/mechanical-engineering'
-      fullPath: '/services/mechanical-engineering'
-      preLoaderRoute: typeof ServicesMechanicalEngineeringRouteImport
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services_/electrical-engineering': {
-      id: '/services_/electrical-engineering'
-      path: '/services/electrical-engineering'
-      fullPath: '/services/electrical-engineering'
-      preLoaderRoute: typeof ServicesElectricalEngineeringRouteImport
+    '/sectors': {
+      id: '/sectors'
+      path: '/sectors'
+      fullPath: '/sectors'
+      preLoaderRoute: typeof SectorsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services_/design-documentation': {
-      id: '/services_/design-documentation'
-      path: '/services/design-documentation'
-      fullPath: '/services/design-documentation'
-      preLoaderRoute: typeof ServicesDesignDocumentationRouteImport
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services_/audit-root-cause-analysis': {
+      id: '/services_/audit-root-cause-analysis'
+      path: '/services/audit-root-cause-analysis'
+      fullPath: '/services/audit-root-cause-analysis'
+      preLoaderRoute: typeof ServicesAuditRootCauseAnalysisRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services_/civil-structural-engineering': {
@@ -330,11 +309,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesCivilStructuralEngineeringRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services_/audit-root-cause-analysis': {
-      id: '/services_/audit-root-cause-analysis'
-      path: '/services/audit-root-cause-analysis'
-      fullPath: '/services/audit-root-cause-analysis'
-      preLoaderRoute: typeof ServicesAuditRootCauseAnalysisRouteImport
+    '/services_/design-documentation': {
+      id: '/services_/design-documentation'
+      path: '/services/design-documentation'
+      fullPath: '/services/design-documentation'
+      preLoaderRoute: typeof ServicesDesignDocumentationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services_/electrical-engineering': {
+      id: '/services_/electrical-engineering'
+      path: '/services/electrical-engineering'
+      fullPath: '/services/electrical-engineering'
+      preLoaderRoute: typeof ServicesElectricalEngineeringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services_/mechanical-engineering': {
+      id: '/services_/mechanical-engineering'
+      path: '/services/mechanical-engineering'
+      fullPath: '/services/mechanical-engineering'
+      preLoaderRoute: typeof ServicesMechanicalEngineeringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services_/project-support': {
+      id: '/services_/project-support'
+      path: '/services/project-support'
+      fullPath: '/services/project-support'
+      preLoaderRoute: typeof ServicesProjectSupportRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

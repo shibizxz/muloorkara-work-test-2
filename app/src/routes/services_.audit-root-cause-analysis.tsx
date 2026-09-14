@@ -1,4 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { ServiceDetail, pageHead } from '../components/Site'
-import { services } from '../content/site'
-export const Route = createFileRoute('/services_/audit-root-cause-analysis')({ head: () => pageHead('Audit & Root Cause Analysis', services[3].short), component: () => <ServiceDetail service={services[3]} /> })
+import { createFileRoute } from "@tanstack/react-router";
+import { ServiceDetail, pageHead } from "../components/Site";
+import { services } from "../content/site";
+export const Route = createFileRoute("/services_/audit-root-cause-analysis")({
+  head: () => pageHead("Audit & Root Cause Analysis", services[3].short),
+  component: () => <ServiceDetail service={services[3]} />,
+});

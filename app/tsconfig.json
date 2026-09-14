@@ -12,8 +12,6 @@
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": false,
     "noEmit": true,
-    // Lets the root route import app-meta.json (page metadata committed by the
-    // marketplace meta API) at build time.
     "resolveJsonModule": true,
 
     /* Linting */
@@ -24,8 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "@higgsfield-ai/icons/*": ["./src/lib/quanta-material-icons.ts"]
+      "@/*": ["./src/*"]
     }
   }
 }

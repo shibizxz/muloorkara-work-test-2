@@ -1,4 +1,46 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { PageHero, pageHead } from '../components/Site'
-export const Route = createFileRoute('/privacy-policy')({ head: () => pageHead('Privacy Policy', 'Privacy information for the YUKTI Engineering & Projects website.'), component: Privacy })
-function Privacy(){ return <main id="main"><PageHero image="/assets/yukti-design-documentation.webp" imageAlt="Organized engineering documents and coordinated technical design" index="05" title="Privacy policy" intro="How this informational website handles personal information." /><article className="legal page-section"><h2>Information you choose to share</h2><p>This website does not store contact-form submissions. The enquiry form prepares a message in your email application. Any information you send is then handled through your chosen email service and received by YUKTI for the purpose of responding to your enquiry.</p><h2>Technical information</h2><p>The hosting service may process basic technical information such as IP address, browser type and request logs to deliver, secure and maintain the website. YUKTI does not use this site to create advertising profiles.</p><h2>How information is used</h2><p>Information sent directly to YUKTI may be used to understand your requirement, respond to you, prepare a proposal and maintain relevant business correspondence. It is not sold to third parties.</p><h2>Your choices</h2><p>You may contact YUKTI at shibilmulakkal@gmail.com to ask about personal information you have provided, or to request correction or deletion where applicable.</p><p className="legal-date">Last updated: 14 September 2026</p></article></main> }
+import { createFileRoute } from "@tanstack/react-router";
+import { PageHero, pageHead } from "../components/Site";
+export const Route = createFileRoute("/privacy-policy")({
+  head: () =>
+    pageHead("Privacy Policy", "Privacy information for the YUKTI Engineering & Projects website."),
+  component: Privacy,
+});
+function Privacy() {
+  return (
+    <main id="main">
+      <PageHero
+        image="/assets/yukti-design-documentation.webp"
+        imageAlt="Organized engineering documents and coordinated technical design"
+        index="05"
+        title="Privacy policy"
+        intro="How this informational website handles personal information."
+      />
+      <article className="legal page-section">
+        <h2>Information you choose to share</h2>
+        <p>
+          This website does not store contact-form submissions. The enquiry form prepares a message
+          in your email application. Any information you send is then handled through your chosen
+          email service and received by YUKTI for the purpose of responding to your enquiry.
+        </p>
+        <h2>Technical information</h2>
+        <p>
+          The hosting service may process basic technical information such as IP address, browser
+          type and request logs to deliver, secure and maintain the website. YUKTI does not use this
+          site to create advertising profiles.
+        </p>
+        <h2>How information is used</h2>
+        <p>
+          Information sent directly to YUKTI may be used to understand your requirement, respond to
+          you, prepare a proposal and maintain relevant business correspondence. It is not sold to
+          third parties.
+        </p>
+        <h2>Your choices</h2>
+        <p>
+          You may contact YUKTI at shibilmulakkal@gmail.com to ask about personal information you
+          have provided, or to request correction or deletion where applicable.
+        </p>
+        <p className="legal-date">Last updated: 14 September 2026</p>
+      </article>
+    </main>
+  );
+}

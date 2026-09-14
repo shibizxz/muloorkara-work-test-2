@@ -1,4 +1,47 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { PageHero, pageHead } from '../components/Site'
-export const Route = createFileRoute('/terms')({ head: () => pageHead('Terms', 'Website terms for YUKTI Engineering & Projects.'), component: Terms })
-function Terms(){ return <main id="main"><PageHero image="/assets/yukti-design-documentation.webp" imageAlt="Engineering design documentation in a professional studio" index="06" title="Website terms" intro="The basis on which this website and its general information are provided." /><article className="legal page-section"><h2>Informational purpose</h2><p>The content on this website describes YUKTI capabilities in general terms. It is not project-specific engineering advice and should not be relied on as a substitute for a formal scope, analysis, design or professional review.</p><h2>Project engagements</h2><p>Any professional service is subject to an agreed scope, responsibilities, inputs, deliverables, programme and commercial terms. Website content alone does not create a consultant-client relationship.</p><h2>Accuracy and availability</h2><p>Reasonable care is taken in preparing website content, but information may be updated and availability is not guaranteed. External software and standard names remain the property of their respective owners.</p><h2>Use of materials</h2><p>Unless otherwise stated, the YUKTI name, identity, text and website presentation may not be reproduced for commercial use without permission.</p><h2>Contact</h2><p>Questions about these terms may be sent to shibilmulakkal@gmail.com.</p><p className="legal-date">Last updated: 14 September 2026</p></article></main> }
+import { createFileRoute } from "@tanstack/react-router";
+import { PageHero, pageHead } from "../components/Site";
+export const Route = createFileRoute("/terms")({
+  head: () => pageHead("Terms", "Website terms for YUKTI Engineering & Projects."),
+  component: Terms,
+});
+function Terms() {
+  return (
+    <main id="main">
+      <PageHero
+        image="/assets/yukti-design-documentation.webp"
+        imageAlt="Engineering design documentation in a professional studio"
+        index="06"
+        title="Website terms"
+        intro="The basis on which this website and its general information are provided."
+      />
+      <article className="legal page-section">
+        <h2>Informational purpose</h2>
+        <p>
+          The content on this website describes YUKTI capabilities in general terms. It is not
+          project-specific engineering advice and should not be relied on as a substitute for a
+          formal scope, analysis, design or professional review.
+        </p>
+        <h2>Project engagements</h2>
+        <p>
+          Any professional service is subject to an agreed scope, responsibilities, inputs,
+          deliverables, programme and commercial terms. Website content alone does not create a
+          consultant-client relationship.
+        </p>
+        <h2>Accuracy and availability</h2>
+        <p>
+          Reasonable care is taken in preparing website content, but information may be updated and
+          availability is not guaranteed. External software and standard names remain the property
+          of their respective owners.
+        </p>
+        <h2>Use of materials</h2>
+        <p>
+          Unless otherwise stated, the YUKTI name, identity, text and website presentation may not
+          be reproduced for commercial use without permission.
+        </p>
+        <h2>Contact</h2>
+        <p>Questions about these terms may be sent to shibilmulakkal@gmail.com.</p>
+        <p className="legal-date">Last updated: 14 September 2026</p>
+      </article>
+    </main>
+  );
+}
