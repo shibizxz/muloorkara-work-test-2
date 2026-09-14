@@ -1,6 +1,18 @@
 import type { ReactNode } from 'react'
 import { contact, nav, services } from '../content/site'
 
+export function ArrowUpRight({ className = '' }: { className?: string }) {
+  return <svg className={`arrow-icon arrow-up-right ${className}`.trim()} viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+    <path d="M5.5 14.5 14.5 5.5M7 5.5h7.5V13" />
+  </svg>
+}
+
+export function ChevronDown({ className = '' }: { className?: string }) {
+  return <svg className={`arrow-icon chevron-down ${className}`.trim()} viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+    <path d="m5.25 7.5 4.75 4.75 4.75-4.75" />
+  </svg>
+}
+
 export const pageHead = (title: string, description: string) => ({
   meta: [
     { title: `${title} | YUKTI Engineering & Projects` },
@@ -19,22 +31,22 @@ export function SiteHeader() {
     <nav className="desktop-nav" aria-label="Primary navigation">
       <a href="/about">About</a>
       <div className="services-dropdown">
-        <a className="services-trigger" href="/services" aria-haspopup="true">Services <span className="dropdown-arrow" aria-hidden="true">⌄</span></a>
+        <a className="services-trigger" href="/services" aria-haspopup="true">Services <span className="dropdown-arrow" aria-hidden="true"><ChevronDown /></span></a>
         <div className="services-mega">
-          <div className="services-mega-intro"><small>01 / EXPERTISE</small><strong>Engineering depth across every project layer.</strong><a href="/services">View all services <span>↗</span></a></div>
-          <div className="services-mega-links">{services.map((item) => <a key={item.slug} href={`/services/${item.slug}`}><span>{item.index}</span><strong>{item.title}</strong><b>↗</b></a>)}</div>
+          <div className="services-mega-intro"><small>01 / EXPERTISE</small><strong>Engineering depth across every project layer.</strong><a href="/services">View all services <span><ArrowUpRight /></span></a></div>
+          <div className="services-mega-links">{services.map((item) => <a key={item.slug} href={`/services/${item.slug}`}><span>{item.index}</span><strong>{item.title}</strong><b><ArrowUpRight /></b></a>)}</div>
         </div>
       </div>
       <a href="/sectors">Sectors</a>
       <a href="/contact">Contact</a>
-      <a className="nav-cta" href={contact.emailHref}>Start a conversation <span>↗</span></a>
+      <a className="nav-cta" href={contact.emailHref}>Start a conversation <span><ArrowUpRight /></span></a>
     </nav>
     <details className="mobile-menu">
       <summary aria-label="Open navigation"><span className="menu-label"><small>Explore</small><strong>Menu</strong></span><i aria-hidden="true"><b></b></i></summary>
       <nav aria-label="Mobile navigation">
         <div className="mobile-menu-head"><img src="/assets/yukti-logo-mark.png" alt="" /><span>YEP / NAVIGATION 01</span></div>
-        <div className="mobile-nav-links">{nav.map(([label, href], index) => label === 'Services' ? <details className="mobile-services-dropdown" key={href}><summary><span>0{index + 1}</span><strong>Services</strong><b>⌄</b></summary><div><a href="/services"><span>00</span><strong>All services</strong><b>↗</b></a>{services.map((item) => <a key={item.slug} href={`/services/${item.slug}`}><span>{item.index}</span><strong>{item.title}</strong><b>↗</b></a>)}</div></details> : <a key={href} href={href}><span>0{index + 1}</span><strong>{label}</strong><b>↗</b></a>)}</div>
-        <div className="mobile-menu-contact"><p>Engineering support starts with a clear conversation.</p><a href={contact.emailHref}>Start a conversation <span>↗</span></a><a href={contact.phoneHref}>{contact.phone}</a></div>
+        <div className="mobile-nav-links">{nav.map(([label, href], index) => label === 'Services' ? <details className="mobile-services-dropdown" key={href}><summary><span>0{index + 1}</span><strong>Services</strong><b className="mobile-dropdown-arrow"><ChevronDown /></b></summary><div><a href="/services"><span>00</span><strong>All services</strong><b><ArrowUpRight /></b></a>{services.map((item) => <a key={item.slug} href={`/services/${item.slug}`}><span>{item.index}</span><strong>{item.title}</strong><b><ArrowUpRight /></b></a>)}</div></details> : <a key={href} href={href}><span>0{index + 1}</span><strong>{label}</strong><b><ArrowUpRight /></b></a>)}</div>
+        <div className="mobile-menu-contact"><p>Engineering support starts with a clear conversation.</p><a href={contact.emailHref}>Start a conversation <span><ArrowUpRight /></span></a><a href={contact.phoneHref}>{contact.phone}</a></div>
       </nav>
     </details>
   </header>
@@ -51,7 +63,7 @@ export function SiteFooter() {
       <div><span className="footer-label">Core disciplines</span>{services.slice(0,3).map((service) => <a key={service.slug} href={`/services/${service.slug}`}>{service.title}</a>)}</div>
       <div><span className="footer-label">Direct contact</span><a href={contact.phoneHref}>{contact.phone}</a><a href={contact.emailHref}>{contact.email}</a></div>
     </div>
-    <div className="footer-base"><span>© {new Date().getFullYear()} YUKTI Engineering & Projects</span><a className="powered-by" href="https://webappzz.com/" target="_blank" rel="noopener noreferrer">Powered by Webappzz Technologies <span aria-hidden="true">↗</span></a><span><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a></span></div>
+    <div className="footer-base"><span>© {new Date().getFullYear()} YUKTI Engineering & Projects</span><a className="powered-by" href="https://webappzz.com/" target="_blank" rel="noopener noreferrer">Powered by Webappzz Technologies <span aria-hidden="true"><ArrowUpRight /></span></a><span><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a></span></div>
   </footer>
 }
 
@@ -83,14 +95,14 @@ export function SectionLead({ index, label, title, text, light = false }: { inde
 export function ContactBay() {
   return <section className="contact-bay">
     <div><Eyebrow light>Let us solve the right problem</Eyebrow><h2>Bring us the engineering challenge.</h2></div>
-    <div className="contact-actions"><a className="button button-gold" href={contact.emailHref}>Email YUKTI <span>↗</span></a><a className="text-link text-link-light" href={contact.phoneHref}>Call {contact.phone} <span>↗</span></a></div>
+    <div className="contact-actions"><a className="button button-gold" href={contact.emailHref}>Email YUKTI <span><ArrowUpRight /></span></a><a className="text-link text-link-light" href={contact.phoneHref}>Call {contact.phone} <span><ArrowUpRight /></span></a></div>
   </section>
 }
 
 export function ServiceDetail({ service }: { service: (typeof services)[number] }) {
   return <main>
     <PageHero index={service.index} title={service.title} intro={service.intro} image={service.image} imageAlt={service.imageAlt}>
-      <a className="button button-gold" href="/contact">Discuss a requirement <span>↗</span></a>
+      <a className="button button-gold" href="/contact">Discuss a requirement <span><ArrowUpRight /></span></a>
     </PageHero>
     {service.image && <figure className="detail-image"><img src={service.image} alt={service.imageAlt} /></figure>}
     <section className="detail-grid page-section">
@@ -103,7 +115,7 @@ export function ServiceDetail({ service }: { service: (typeof services)[number] 
     </section>
     <section className="other-services page-section">
       <SectionLead index="C" label="Continue exploring" title="More ways YUKTI can support the project." />
-      <div className="related-services">{services.filter((item) => item.slug !== service.slug).map((item) => <a key={item.slug} href={`/services/${item.slug}`}><span>{item.index}</span><strong>{item.title}</strong><b>↗</b></a>)}</div>
+      <div className="related-services">{services.filter((item) => item.slug !== service.slug).map((item) => <a key={item.slug} href={`/services/${item.slug}`}><span>{item.index}</span><strong>{item.title}</strong><b><ArrowUpRight /></b></a>)}</div>
     </section>
     <ContactBay />
   </main>

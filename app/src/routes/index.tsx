@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { ContactBay, Eyebrow, SectionLead } from '../components/Site'
+import { ArrowUpRight, ContactBay, Eyebrow, SectionLead } from '../components/Site'
 import { sectors, services } from '../content/site'
 export const Route = createFileRoute('/')({ component: Home })
 function Home() { return <main id="main">
@@ -11,7 +11,7 @@ function Home() { return <main id="main">
       <Eyebrow light>Consulting / Design / Solutions</Eyebrow>
       <h1>Engineering clarity.<br/><em>Project confidence.</em></h1>
       <p>Practical, technically sound engineering support across electrical, civil, structural and mechanical disciplines.</p>
-      <div className="hero-actions"><a className="button button-gold" href="/services">Explore expertise <span>↗</span></a><a className="text-link text-link-light" href="/contact">Discuss a project <span>↗</span></a></div>
+      <div className="hero-actions"><a className="button button-gold" href="/services">Explore expertise <span><ArrowUpRight /></span></a><a className="text-link text-link-light" href="/contact">Discuss a project <span><ArrowUpRight /></span></a></div>
     </div>
     <div className="hero-coordinate"><span>YEP / 01</span><span>ENGINEERING EVERY NEED</span></div>
   </section>
@@ -24,8 +24,8 @@ function Home() { return <main id="main">
 
   <section className="services-section page-section">
     <SectionLead index="01" label="Core disciplines" title="Multidisciplinary thinking. One practical direction." text="Deep discipline capability, coordinated around the outcome your project actually needs." />
-    <div className="discipline-list">{services.slice(0,3).map((service) => <a key={service.slug} href={`/services/${service.slug}`} className="discipline-row"><span>{service.index}</span><h3>{service.title}</h3><p>{service.short}</p><b>↗</b></a>)}</div>
-    <div className="specialist-rail">{services.slice(3).map((service) => <a key={service.slug} href={`/services/${service.slug}`}><span>{service.index}</span>{service.title}<b>↗</b></a>)}</div>
+    <div className="discipline-list">{services.slice(0,3).map((service) => <a key={service.slug} href={`/services/${service.slug}`} className="discipline-row"><span>{service.index}</span><h3>{service.title}</h3><p>{service.short}</p><b><ArrowUpRight /></b></a>)}</div>
+    <div className="specialist-rail">{services.slice(3).map((service) => <a key={service.slug} href={`/services/${service.slug}`}><span>{service.index}</span>{service.title}<b><ArrowUpRight /></b></a>)}</div>
   </section>
 
   <section className="method-section">
@@ -51,7 +51,7 @@ function Home() { return <main id="main">
 
   <section className="sector-feature">
     <img src="/assets/yukti-energy-infrastructure.webp" alt="Integrated substation, renewable energy, process plant and bridge infrastructure" loading="lazy" />
-    <div><Eyebrow light>Connected infrastructure</Eyebrow><h2>One engineering view across the whole asset.</h2><a className="text-link text-link-light" href="/sectors">Explore sectors <span>↗</span></a></div>
+    <div><Eyebrow light>Connected infrastructure</Eyebrow><h2>One engineering view across the whole asset.</h2><a className="text-link text-link-light" href="/sectors">Explore sectors <span><ArrowUpRight /></span></a></div>
   </section>
 
   <section className="why-section"><div className="page-section"><SectionLead index="05" label="Why YUKTI" title="Technical depth without unnecessary complexity." light />

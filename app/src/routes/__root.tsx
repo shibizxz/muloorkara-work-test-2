@@ -3,7 +3,7 @@ import { Outlet, createRootRouteWithContext, useRouter, HeadContent, Scripts } f
 import { useEffect, type ReactNode } from 'react'
 import appCss from '../styles.css?url'
 import { reportHiggsfieldError } from '../lib/higgsfield-error-reporting'
-import { SiteHeader, SiteFooter } from '../components/Site'
+import { ArrowUpRight, SiteHeader, SiteFooter } from '../components/Site'
 import appMetaJson from '../app-meta.json'
 
 declare const __HF_DESIGN_INSPECTOR__: boolean
@@ -25,7 +25,7 @@ function buildHead(meta: AppMeta) {
     { rel: 'apple-touch-icon', href: '/assets/apple-touch-icon.png' }, { rel: 'manifest', href: '/site.webmanifest' },
   ] }
 }
-function NotFoundComponent() { return <main className="state-page"><p>404 / ROUTE NOT FOUND</p><h1>This drawing does not exist.</h1><a className="button button-gold" href="/">Return home <span>↗</span></a></main> }
+function NotFoundComponent() { return <main className="state-page"><p>404 / ROUTE NOT FOUND</p><h1>This drawing does not exist.</h1><a className="button button-gold" href="/">Return home <span><ArrowUpRight /></span></a></main> }
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error); const router = useRouter()
   useEffect(() => { reportHiggsfieldError(error, { boundary: 'tanstack_root_error_component' }) }, [error])
