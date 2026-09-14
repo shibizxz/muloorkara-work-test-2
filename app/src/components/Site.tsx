@@ -17,7 +17,16 @@ export function SiteHeader() {
       <span><strong>YUKTI</strong><small>ENGINEERING & PROJECTS</small></span>
     </a>
     <nav className="desktop-nav" aria-label="Primary navigation">
-      {nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
+      <a href="/about">About</a>
+      <details className="services-dropdown">
+        <summary>Services <span aria-hidden="true">+</span></summary>
+        <div className="services-mega">
+          <div className="services-mega-intro"><small>01 / EXPERTISE</small><strong>Engineering depth across every project layer.</strong><a href="/services">View all services <span>↗</span></a></div>
+          <div className="services-mega-links">{services.map((item) => <a key={item.slug} href={`/services/${item.slug}`}><span>{item.index}</span><strong>{item.title}</strong><b>↗</b></a>)}</div>
+        </div>
+      </details>
+      <a href="/sectors">Sectors</a>
+      <a href="/contact">Contact</a>
       <a className="nav-cta" href={contact.emailHref}>Start a conversation <span>↗</span></a>
     </nav>
     <details className="mobile-menu">
@@ -89,6 +98,10 @@ export function ServiceDetail({ service }: { service: (typeof services)[number] 
     <section className="outcomes page-section">
       <SectionLead index="B" label="Outcomes" title="Work that moves decisions forward." text="Each engagement is shaped around the problem, the available evidence and the level of intervention genuinely required." light />
       <div className="outcome-grid">{service.outcomes.map((item, i) => <article key={item}><span>0{i+1}</span><p>{item}</p></article>)}</div>
+    </section>
+    <section className="other-services page-section">
+      <SectionLead index="C" label="Continue exploring" title="More ways YUKTI can support the project." />
+      <div className="related-services">{services.filter((item) => item.slug !== service.slug).map((item) => <a key={item.slug} href={`/services/${item.slug}`}><span>{item.index}</span><strong>{item.title}</strong><b>↗</b></a>)}</div>
     </section>
     <ContactBay />
   </main>
