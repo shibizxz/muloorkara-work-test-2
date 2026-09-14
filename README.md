@@ -17,6 +17,16 @@ From `app`, run:
 npm run build
 ```
 
+## Deploying on Vercel
+
+1. Import the GitHub repository into Vercel.
+2. Set **Root Directory** to `app`.
+3. Leave **Build Command**, **Output Directory**, and **Install Command** at their defaults.
+4. No environment variables are required for the current website.
+5. Deploy.
+
+The `app/vercel.json` file selects TanStack Start, while Nitro creates the server output Vercel needs.
+
 ## Uploading to GitHub
 
 Upload the complete `YUKTI-Website-Source` folder, including `.github` and `app`. The website source, assets, dependency lock file, and build workflow are all included.
