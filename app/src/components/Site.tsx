@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useEffect, type ReactNode } from 'react'
 import { contact, nav, services } from '../content/site'
 
 export function ArrowUpRight({ className = '' }: { className?: string }) {
@@ -23,6 +23,25 @@ export const pageHead = (title: string, description: string) => ({
 })
 
 export function SiteHeader() {
+  useEffect(() => {
+    const menu = document.querySelector<HTMLDetailsElement>('.desktop-nav .services-dropdown')
+    const closeOutside = (event: PointerEvent) => {
+      if (menu?.open && event.target instanceof Node && !menu.contains(event.target)) menu.open = false
+    }
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && menu?.open) {
+        menu.open = false
+        menu.querySelector<HTMLElement>('summary')?.focus()
+      }
+    }
+    document.addEventListener('pointerdown', closeOutside)
+    document.addEventListener('keydown', closeOnEscape)
+    return () => {
+      document.removeEventListener('pointerdown', closeOutside)
+      document.removeEventListener('keydown', closeOnEscape)
+    }
+  }, [])
+
   return <header className="site-header">
     <a className="brand" href="/" aria-label="YUKTI Engineering and Projects home">
       <img src="/assets/yukti-logo-mark.png" alt="" width="54" height="54" />
@@ -30,13 +49,13 @@ export function SiteHeader() {
     </a>
     <nav className="desktop-nav" aria-label="Primary navigation">
       <a href="/about">About</a>
-      <div className="services-dropdown">
-        <a className="services-trigger" href="/services" aria-haspopup="true">Services <span className="dropdown-arrow" aria-hidden="true"><ChevronDown /></span></a>
+      <details className="services-dropdown">
+        <summary className="services-trigger">Services <span className="dropdown-arrow" aria-hidden="true"><ChevronDown /></span></summary>
         <div className="services-mega">
           <div className="services-mega-intro"><small>01 / EXPERTISE</small><strong>Engineering depth across every project layer.</strong><a href="/services">View all services <span><ArrowUpRight /></span></a></div>
           <div className="services-mega-links">{services.map((item) => <a key={item.slug} href={`/services/${item.slug}`}><span>{item.index}</span><strong>{item.title}</strong><b><ArrowUpRight /></b></a>)}</div>
         </div>
-      </div>
+      </details>
       <a href="/sectors">Sectors</a>
       <a href="/contact">Contact</a>
       <a className="nav-cta" href={contact.emailHref}>Start a conversation <span><ArrowUpRight /></span></a>
