@@ -41,7 +41,7 @@ export function SiteFooter() {
       <div><span className="footer-label">Core disciplines</span>{services.slice(0,3).map((service) => <a key={service.slug} href={`/services/${service.slug}`}>{service.title}</a>)}</div>
       <div><span className="footer-label">Direct contact</span><a href={contact.phoneHref}>{contact.phone}</a><a href={contact.emailHref}>{contact.email}</a></div>
     </div>
-    <div className="footer-base"><span>© {new Date().getFullYear()} YUKTI Engineering & Projects</span><span><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a></span></div>
+    <div className="footer-base"><span>© {new Date().getFullYear()} YUKTI Engineering & Projects</span><a className="powered-by" href="https://webappzz.com/" target="_blank" rel="noopener noreferrer">Powered by Webappzz Technologies <span aria-hidden="true">↗</span></a><span><a href="/privacy-policy">Privacy</a><a href="/terms">Terms</a></span></div>
   </footer>
 }
 
