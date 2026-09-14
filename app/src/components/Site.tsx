@@ -317,13 +317,13 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer">
+    <footer id="site-footer" className="site-footer">
       <div className="footer-main">
         <div className="footer-brand">
           <img src="/assets/yukti-logo-mark.png" alt="YUKTI symbol" width="96" height="96" />
           <p>Engineering every need.</p>
         </div>
-        <div>
+        <div className="footer-column footer-nav">
           <span className="footer-label">Navigate</span>
           {nav.map(([label, href]) => (
             <a key={href} href={href}>
@@ -331,7 +331,7 @@ export function SiteFooter() {
             </a>
           ))}
         </div>
-        <div>
+        <div className="footer-column footer-services">
           <span className="footer-label">Core disciplines</span>
           {services.slice(0, 3).map((service) => (
             <a key={service.slug} href={`/services/${service.slug}`}>
@@ -339,7 +339,7 @@ export function SiteFooter() {
             </a>
           ))}
         </div>
-        <div>
+        <div className="footer-column footer-contact">
           <span className="footer-label">Direct contact</span>
           <a href={contact.phoneHref}>{contact.phone}</a>
           <a href={contact.emailHref}>{contact.email}</a>
