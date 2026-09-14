@@ -49,6 +49,11 @@ function Home() { return <main id="main">
     <div className="sector-matrix">{sectors.map(([i,t,p]) => <a key={t} href="/sectors"><span>{i}</span><h3>{t}</h3><p>{p}</p></a>)}</div>
   </section>
 
+  <section className="sector-feature">
+    <img src="/assets/yukti-energy-infrastructure.webp" alt="Integrated substation, renewable energy, process plant and bridge infrastructure" loading="lazy" />
+    <div><Eyebrow light>Connected infrastructure</Eyebrow><h2>One engineering view across the whole asset.</h2><a className="text-link text-link-light" href="/sectors">Explore sectors <span>↗</span></a></div>
+  </section>
+
   <section className="why-section"><div className="page-section"><SectionLead index="05" label="Why YUKTI" title="Technical depth without unnecessary complexity." light />
     <div className="why-grid">{['Engineering-first decisions','Root cause before remedy','Practical, right-sized interventions','Study-to-site continuity','Cost-conscious recommendations','Clear communication and documentation'].map((item,i)=><div key={item}><span>0{i+1}</span><p>{item}</p></div>)}</div>
   </div></section>

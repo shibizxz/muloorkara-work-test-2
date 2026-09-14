@@ -21,10 +21,11 @@ export function SiteHeader() {
       <a className="nav-cta" href={contact.emailHref}>Start a conversation <span>↗</span></a>
     </nav>
     <details className="mobile-menu">
-      <summary aria-label="Open navigation"><span>Menu</span><i></i></summary>
+      <summary aria-label="Open navigation"><span className="menu-label"><small>Explore</small><strong>Menu</strong></span><i aria-hidden="true"><b></b></i></summary>
       <nav aria-label="Mobile navigation">
-        {nav.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
-        <a href={contact.phoneHref}>{contact.phone}</a>
+        <div className="mobile-menu-head"><img src="/assets/yukti-logo-mark.png" alt="" /><span>YEP / NAVIGATION 01</span></div>
+        <div className="mobile-nav-links">{nav.map(([label, href], index) => <a key={href} href={href}><span>0{index + 1}</span><strong>{label}</strong><b>↗</b></a>)}</div>
+        <div className="mobile-menu-contact"><p>Engineering support starts with a clear conversation.</p><a href={contact.emailHref}>Start a conversation <span>↗</span></a><a href={contact.phoneHref}>{contact.phone}</a></div>
       </nav>
     </details>
   </header>
