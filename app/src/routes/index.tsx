@@ -40,10 +40,21 @@ function Home() {
             </a>
           </div>
         </div>
-        <div className="hero-coordinate">
-          <span>YEP / 01</span>
-          <span>ENGINEERING EVERY NEED</span>
-        </div>
+        <nav className="hero-service-rail" aria-label="Explore core engineering disciplines">
+          <div className="hero-rail-label">
+            <small>Integrated capability</small>
+            <strong>Core disciplines</strong>
+          </div>
+          {services.slice(0, 3).map((service) => (
+            <a key={service.slug} href={`/services/${service.slug}`}>
+              <span>{service.index}</span>
+              <strong>{service.title}</strong>
+              <b aria-hidden="true">
+                <ArrowUpRight />
+              </b>
+            </a>
+          ))}
+        </nav>
       </section>
 
       <section className="manifesto page-section">
