@@ -1032,7 +1032,7 @@ button {
   font-size: 0.78rem;
   color: #d2d9e3;
 }
-.sector-detail > div {
+.sector-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--navy);
@@ -1399,7 +1399,7 @@ button {
   .responsibility-section aside {
     min-height: 390px;
   }
-  .sector-detail > div {
+  .sector-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .footer-main {
@@ -1483,7 +1483,7 @@ button {
   .capability-statement-grid,
   .commitment-grid,
   .delivery-grid,
-  .sector-detail > div,
+  .sector-grid,
   .software-list,
   .service-tool-list,
   .engagement > div:last-child {

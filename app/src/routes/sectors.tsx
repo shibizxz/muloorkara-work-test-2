@@ -36,7 +36,7 @@ function Sectors() {
           label="Operating contexts"
           title="One discipline or many. One accountable direction."
         />
-        <div>
+        <div className="sector-grid">
           {sectors.map(([i, t, p]) => (
             <article key={t}>
               <span>{i}</span>
