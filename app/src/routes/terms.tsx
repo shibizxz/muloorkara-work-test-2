@@ -39,7 +39,7 @@ function Terms() {
           be reproduced for commercial use without permission.
         </p>
         <h2>Contact</h2>
-        <p>Questions about these terms may be sent to shibilmulakkal@gmail.com.</p>
+        <p>Questions about these terms may be sent to info@yukti-in.com.</p>
         <p className="legal-date">Last updated: 14 September 2026</p>
       </article>
     </main>

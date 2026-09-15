@@ -18,8 +18,8 @@ const organizationData = {
   name: "YUKTI Engineering & Projects",
   description:
     "Engineering consulting, design and project support across electrical, civil, structural and mechanical disciplines.",
-  telephone: "+91 9567094491",
-  email: "shibilmulakkal@gmail.com",
+  telephone: "+919744284965",
+  email: "info@yukti-in.com",
 };
 function buildHead(meta: AppMeta) {
   const title = meta.og_title ?? "YUKTI Engineering & Projects";

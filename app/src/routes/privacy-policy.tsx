@@ -36,8 +36,8 @@ function Privacy() {
         </p>
         <h2>Your choices</h2>
         <p>
-          You may contact YUKTI at shibilmulakkal@gmail.com to ask about personal information you
-          have provided, or to request correction or deletion where applicable.
+          You may contact YUKTI at info@yukti-in.com to ask about personal information you have
+          provided, or to request correction or deletion where applicable.
         </p>
         <p className="legal-date">Last updated: 14 September 2026</p>
       </article>

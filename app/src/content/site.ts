@@ -1,8 +1,8 @@
 export const contact = {
-  phone: "+91 9567094491",
-  phoneHref: "tel:+919567094491",
-  email: "shibilmulakkal@gmail.com",
-  emailHref: "mailto:shibilmulakkal@gmail.com",
+  phone: "+919744284965",
+  phoneHref: "tel:+919744284965",
+  email: "info@yukti-in.com",
+  emailHref: "mailto:info@yukti-in.com",
 };
 
 export type Service = {
