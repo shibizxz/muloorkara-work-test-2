@@ -1345,6 +1345,9 @@ button {
   .outcome-grid {
     grid-template-columns: 1fr;
   }
+  .method-line {
+    border-right: 1px solid #415069;
+  }
   .method-line article,
   .method-line article:not(:first-child) {
     padding: 2rem 0;
