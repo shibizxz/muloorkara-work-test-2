@@ -795,6 +795,7 @@ button {
   min-height: 190px;
   padding: 1.5rem;
   border-right: 1px solid #49566a;
+  border-bottom: 1px solid #49566a;
 }
 .outcome-grid p {
   margin: 3rem 0 0;
