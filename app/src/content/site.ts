@@ -229,6 +229,7 @@ export const software = [
 ];
 
 export const nav = [
+  ["Home", "/"],
   ["About", "/about"],
   ["Services", "/services"],
   ["Sectors", "/sectors"],

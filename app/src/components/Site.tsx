@@ -179,6 +179,9 @@ export function SiteHeader() {
         </span>
       </a>
       <nav className="desktop-nav" aria-label="Primary navigation">
+        <a href="/" aria-current={pathname === "/" ? "page" : undefined}>
+          Home
+        </a>
         <a href="/about" aria-current={pathname === "/about" ? "page" : undefined}>
           About
         </a>
