@@ -373,7 +373,7 @@ button {
   line-height: 1.02;
   letter-spacing: -0.045em;
 }
-.section-lead > p {
+.section-lead > p:not(.eyebrow) {
   grid-column: 2;
   max-width: 620px;
   margin: 0;
@@ -383,7 +383,7 @@ button {
 .section-lead-light h2 {
   color: white;
 }
-.section-lead-light > p {
+.section-lead-light > p:not(.eyebrow) {
   color: #aeb9c8;
 }
 .services-section {
@@ -883,7 +883,7 @@ button {
   display: block;
   margin-bottom: 3rem;
 }
-.responsibility-section > div > .section-lead > p {
+.responsibility-section > div > .section-lead > p:not(.eyebrow) {
   max-width: 720px;
   margin-top: 1.5rem;
 }
@@ -943,7 +943,7 @@ button {
 .vision-grid span,
 .values-grid span,
 .service-index span,
-.sector-detail span {
+.sector-grid span {
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.12em;
@@ -957,7 +957,7 @@ button {
 }
 .vision-grid p,
 .values-grid p,
-.sector-detail p {
+.sector-grid p {
   color: var(--muted);
 }
 .values-grid {
@@ -1044,7 +1044,7 @@ button {
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-.sector-detail h2 {
+.sector-grid h2 {
   margin: 3.5rem 0 0.6rem;
   font-size: 1.7rem;
   font-weight: 400;
@@ -1327,7 +1327,7 @@ button {
   .manifesto-statement,
   .manifesto aside,
   .section-lead > .eyebrow,
-  .section-lead > p,
+  .section-lead > p:not(.eyebrow),
   .page-hero-grid > .eyebrow {
     grid-column: 1;
     grid-row: auto;
