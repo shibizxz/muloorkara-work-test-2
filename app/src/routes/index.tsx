@@ -140,7 +140,7 @@ function Home() {
           text="Our approach connects analysis, equipment, structures, documentation and site reality across discipline boundaries."
         />
         <SnapSlider className="image-composition" label="Engineering disciplines gallery">
-          <figure className="image-a">
+          <figure className="image-a" tabIndex={0}>
             <img
               src="/assets/yukti-electrical-engineering.webp"
               alt="Industrial electrical substation"
@@ -148,7 +148,7 @@ function Home() {
             />
             <figcaption>Electrical / Power systems</figcaption>
           </figure>
-          <figure className="image-b">
+          <figure className="image-b" tabIndex={0}>
             <img
               src="/assets/yukti-civil-structural-engineering.webp"
               alt="Bridge and complex structural systems"
@@ -156,7 +156,7 @@ function Home() {
             />
             <figcaption>Civil / Structural systems</figcaption>
           </figure>
-          <figure className="image-c">
+          <figure className="image-c" tabIndex={0}>
             <img
               src="/assets/yukti-mechanical-engineering.webp"
               alt="Conveyor and industrial process equipment"
