@@ -471,8 +471,12 @@ export function ServiceDetail({ service }: { service: (typeof services)[number] 
           </span>
         </a>
       </PageHero>
-      <section className="detail-grid page-section">
-        <SectionLead index="A" label="Scope" title="Engineering depth, applied with judgement." />
+      <section id="capabilities" className="detail-grid page-section">
+        <SectionLead
+          index="A"
+          label={service.capabilityLabel ?? "Scope"}
+          title="Engineering depth, applied with judgement."
+        />
         <div className="capability-list">
           {service.capabilities.map((item, i) => (
             <div key={item}>
@@ -482,6 +486,32 @@ export function ServiceDetail({ service }: { service: (typeof services)[number] 
           ))}
         </div>
       </section>
+      {service.insight && (
+        <section id="evidence-led-engineering" className="service-insight page-section">
+          <Eyebrow light>{service.insight.label}</Eyebrow>
+          <div>
+            <h2>{service.insight.title}</h2>
+            <p>{service.insight.text}</p>
+          </div>
+        </section>
+      )}
+      {service.software && (
+        <section id="engineering-software" className="service-tools page-section">
+          <SectionLead
+            index="T"
+            label="Engineering software"
+            title="Established tools, directed by engineering judgement."
+            text="Software supports the analysis. The quality of the outcome depends on the assumptions, checks and engineering decisions around it."
+          />
+          <div className="service-tool-list">
+            {service.software.map((tool, index) => (
+              <span key={tool}>
+                {String(index + 1).padStart(2, "0")} / {tool}
+              </span>
+            ))}
+          </div>
+        </section>
+      )}
       <section className="outcomes page-section">
         <SectionLead
           index="B"

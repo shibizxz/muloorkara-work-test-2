@@ -738,6 +738,51 @@ button {
   margin: 0;
   font-size: 1.08rem;
 }
+.service-insight {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5vw;
+  background: var(--navy);
+  color: white;
+}
+.service-insight .eyebrow {
+  margin: 0;
+}
+.service-insight h2 {
+  margin: 0;
+  max-width: 900px;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.service-insight p {
+  max-width: 760px;
+  margin: 2rem 0 0;
+  color: #cbd3de;
+  font-size: 1.15rem;
+}
+.service-tools {
+  background: #ede9e0;
+}
+.service-tools .section-lead {
+  margin-bottom: 3rem;
+}
+.service-tool-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--navy);
+}
+.service-tool-list span {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem 1rem 0;
+  border-bottom: 1px solid #c7c7c0;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
 .outcome-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -768,6 +813,114 @@ button {
 }
 .prose p:first-child {
   margin-top: 0;
+}
+.company-capabilities {
+  background: white;
+}
+.capability-statement-grid,
+.commitment-grid,
+.delivery-grid {
+  display: grid;
+  border-top: 1px solid var(--navy);
+}
+.capability-statement-grid,
+.commitment-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.capability-statement-grid article,
+.commitment-grid article,
+.delivery-grid article {
+  min-height: 190px;
+  padding: 1.5rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.capability-statement-grid span,
+.commitment-grid span,
+.delivery-grid span,
+.responsibility-list span {
+  color: var(--gold-dark);
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+}
+.capability-statement-grid p,
+.commitment-grid p,
+.delivery-grid p {
+  margin: 3rem 0 0;
+  font-size: 1.05rem;
+}
+.commitment-section {
+  background: var(--deep);
+  color: white;
+}
+.commitment-grid {
+  border-top-color: #415069;
+}
+.commitment-grid article {
+  border-color: #415069;
+}
+.commitment-grid span {
+  color: var(--gold);
+}
+.delivery-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.responsibility-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(320px, 0.8fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  background: var(--navy);
+  color: white;
+}
+.responsibility-section > div > .section-lead {
+  display: block;
+  margin-bottom: 3rem;
+}
+.responsibility-section > div > .section-lead > p {
+  max-width: 720px;
+  margin-top: 1.5rem;
+}
+.responsibility-list {
+  border-top: 1px solid #49566a;
+}
+.responsibility-list p {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid #49566a;
+  color: #d5dce5;
+}
+.responsibility-list span {
+  color: var(--gold);
+}
+.responsibility-section aside {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(2rem, 4vw, 4rem);
+  background: var(--gold);
+  color: var(--deep);
+}
+.responsibility-section aside > span {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+.responsibility-section aside h2 {
+  margin: auto 0 1.5rem;
+  font-size: clamp(2.2rem, 3.5vw, 3.8rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.responsibility-section aside p {
+  margin: 0;
+  font-size: 1.05rem;
 }
 .vision-grid {
   display: grid;
@@ -883,6 +1036,25 @@ button {
   margin: 3.5rem 0 0.6rem;
   font-size: 1.7rem;
   font-weight: 400;
+}
+.coordination-feature {
+  background: var(--navy);
+  color: white;
+}
+.coordination-feature > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #49566a;
+}
+.coordination-feature > div:last-child span {
+  min-height: 110px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.4rem;
+  border-right: 1px solid #49566a;
+  border-bottom: 1px solid #49566a;
+  color: #d8dee7;
+  font-size: 1.05rem;
 }
 .engagement > div:last-child {
   display: grid;
@@ -1192,11 +1364,26 @@ button {
   .contact-bay,
   .detail-grid,
   .about-intro,
-  .contact-page {
+  .contact-page,
+  .service-insight {
     grid-template-columns: 1fr;
+  }
+  .service-tool-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .capability-statement-grid,
+  .commitment-grid,
+  .delivery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .responsibility-section {
+    grid-template-columns: 1fr;
+  }
+  .responsibility-section aside {
+    min-height: 390px;
   }
   .sector-detail > div {
     grid-template-columns: repeat(2, 1fr);
@@ -1279,10 +1466,28 @@ button {
   }
   .why-grid,
   .values-grid,
+  .capability-statement-grid,
+  .commitment-grid,
+  .delivery-grid,
   .sector-detail > div,
   .software-list,
+  .service-tool-list,
   .engagement > div:last-child {
     grid-template-columns: 1fr;
+  }
+  .capability-statement-grid article,
+  .commitment-grid article,
+  .delivery-grid article {
+    min-height: 150px;
+  }
+  .responsibility-section aside {
+    min-height: 330px;
+  }
+  .coordination-feature > div:last-child {
+    grid-template-columns: 1fr;
+  }
+  .coordination-feature > div:last-child span {
+    min-height: 86px;
   }
   .page-hero {
     min-height: 500px;

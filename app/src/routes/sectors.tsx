@@ -17,7 +17,7 @@ function Sectors() {
         imageAlt="Bridge and structural infrastructure in a demanding coastal setting"
         index="03"
         title="Engineering where performance is consequential."
-        intro="We support new and existing assets across sectors where safety, reliability, constructability and operational continuity demand clear technical decisions."
+        intro="YUKTI's engineering approach is transferable across sectors because the underlying objective remains the same: safe, reliable and value-driven infrastructure."
       />
       <figure className="sector-panorama">
         <img
@@ -46,9 +46,23 @@ function Sectors() {
           ))}
         </div>
       </section>
-      <section className="engagement page-section">
+      <section id="multidisciplinary-coordination" className="coordination-feature page-section">
         <SectionLead
           index="B"
+          label="Multidisciplinary coordination"
+          title="Studies, drawings, site conditions and execution - connected."
+          text="YUKTI brings engineering analysis, design review, troubleshooting, audits and project execution support into one coordinated approach."
+          light
+        />
+        <div>
+          <span>Electrical systems</span>
+          <span>Civil & structural systems</span>
+          <span>Mechanical & plant systems</span>
+        </div>
+      </section>
+      <section className="engagement page-section">
+        <SectionLead
+          index="C"
           label="How we engage"
           title="Support proportionate to the problem."
           light

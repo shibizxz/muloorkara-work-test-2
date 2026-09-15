@@ -207,17 +207,19 @@ function Home() {
           <SectionLead
             index="05"
             label="Why YUKTI"
-            title="Technical depth without unnecessary complexity."
+            title="A technically credible answer, not simply a product recommendation."
+            text="YUKTI is designed to be the engineering partner clients can call when the real need must be understood before the intervention is selected."
             light
           />
           <div className="why-grid">
             {[
-              "Engineering-first decisions",
-              "Root cause before remedy",
-              "Practical, right-sized interventions",
-              "Study-to-site continuity",
-              "Cost-conscious recommendations",
-              "Clear communication and documentation",
+              "Engineering-first rather than sales-first recommendations",
+              "Problem diagnosis and root-cause understanding",
+              "Practical solutions matched to the client's actual need",
+              "Studies, drawings, site conditions and execution connected",
+              "Cost-conscious engineering that avoids unnecessary financial burden",
+              "Sustainability through efficiency, lifecycle value and responsible intervention",
+              "Clear communication and documentation for better client decisions",
             ].map((item, i) => (
               <div key={item}>
                 <span>0{i + 1}</span>
