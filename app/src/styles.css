@@ -511,6 +511,15 @@ button {
     box-shadow 0.35s ease,
     filter 0.35s ease;
 }
+.image-composition figure > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.image-composition figure > a:focus-visible {
+  outline: none;
+}
 .image-composition img {
   width: 100%;
   height: 100%;
@@ -553,7 +562,7 @@ button {
 }
 @media (hover: hover) and (pointer: fine) {
   .image-composition figure:hover,
-  .image-composition figure:focus-visible {
+  .image-composition figure:focus-within {
     z-index: 10;
     outline: 1px solid rgba(217, 166, 85, 0.7);
     outline-offset: 5px;

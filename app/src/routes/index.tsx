@@ -140,28 +140,37 @@ function Home() {
           text="Our approach connects analysis, equipment, structures, documentation and site reality across discipline boundaries."
         />
         <SnapSlider className="image-composition" label="Engineering disciplines gallery">
-          <figure className="image-a" tabIndex={0}>
-            <img
-              src="/assets/yukti-electrical-engineering.webp"
-              alt="Industrial electrical substation"
-              loading="lazy"
-            />
+          <figure className="image-a">
+            <a href="/services/electrical-engineering" aria-label="View Electrical Engineering">
+              <img
+                src="/assets/yukti-electrical-engineering.webp"
+                alt="Industrial electrical substation"
+                loading="lazy"
+              />
+            </a>
             <figcaption>Electrical / Power systems</figcaption>
           </figure>
-          <figure className="image-b" tabIndex={0}>
-            <img
-              src="/assets/yukti-civil-structural-engineering.webp"
-              alt="Bridge and complex structural systems"
-              loading="lazy"
-            />
+          <figure className="image-b">
+            <a
+              href="/services/civil-structural-engineering"
+              aria-label="View Civil and Structural Engineering"
+            >
+              <img
+                src="/assets/yukti-civil-structural-engineering.webp"
+                alt="Bridge and complex structural systems"
+                loading="lazy"
+              />
+            </a>
             <figcaption>Civil / Structural systems</figcaption>
           </figure>
-          <figure className="image-c" tabIndex={0}>
-            <img
-              src="/assets/yukti-mechanical-engineering.webp"
-              alt="Conveyor and industrial process equipment"
-              loading="lazy"
-            />
+          <figure className="image-c">
+            <a href="/services/mechanical-engineering" aria-label="View Mechanical Engineering">
+              <img
+                src="/assets/yukti-mechanical-engineering.webp"
+                alt="Conveyor and industrial process equipment"
+                loading="lazy"
+              />
+            </a>
             <figcaption>Mechanical / Plant systems</figcaption>
           </figure>
         </SnapSlider>
