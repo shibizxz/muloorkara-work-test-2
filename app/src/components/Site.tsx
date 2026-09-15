@@ -256,7 +256,10 @@ export function SiteHeader() {
         >
           <div className="mobile-menu-head">
             <img src="/assets/yukti-logo-mark.png" alt="" />
-            <span>YEP / NAVIGATION 01</span>
+            <span className="mobile-menu-brand">
+              <strong>YUKTI</strong>
+              <small>ENGINEERING & PROJECTS</small>
+            </span>
           </div>
           <div className="mobile-nav-links">
             {nav.map(([label, href], index) =>
