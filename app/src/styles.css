@@ -453,6 +453,7 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid #415069;
+  border-left: 1px solid #415069;
 }
 .method-line article {
   position: relative;
@@ -599,6 +600,7 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid #49566a;
+  border-left: 1px solid #49566a;
 }
 .why-grid div {
   min-height: 170px;
@@ -721,12 +723,14 @@ button {
 }
 .capability-list {
   border-top: 1px solid var(--navy);
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
 }
 .capability-list > div {
   display: grid;
   grid-template-columns: 60px 1fr;
   gap: 1rem;
-  padding: 1.25rem 0;
+  padding: 1.25rem;
   border-bottom: 1px solid var(--line);
 }
 .capability-list span {
@@ -772,12 +776,14 @@ button {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 1px solid var(--navy);
+  border-left: 1px solid #c7c7c0;
 }
 .service-tool-list span {
   min-height: 64px;
   display: flex;
   align-items: center;
-  padding: 1rem 1rem 1rem 0;
+  padding: 1rem;
+  border-right: 1px solid #c7c7c0;
   border-bottom: 1px solid #c7c7c0;
   color: var(--ink);
   font-family: var(--mono);
@@ -787,6 +793,7 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid #49566a;
+  border-left: 1px solid #49566a;
 }
 .outcome-grid article {
   min-height: 190px;
@@ -822,6 +829,7 @@ button {
 .delivery-grid {
   display: grid;
   border-top: 1px solid var(--navy);
+  border-left: 1px solid var(--line);
 }
 .capability-statement-grid,
 .commitment-grid {
@@ -856,6 +864,7 @@ button {
 }
 .commitment-grid {
   border-top-color: #415069;
+  border-left-color: #415069;
 }
 .commitment-grid article {
   border-color: #415069;
@@ -883,13 +892,15 @@ button {
 }
 .responsibility-list {
   border-top: 1px solid #49566a;
+  border-left: 1px solid #49566a;
+  border-right: 1px solid #49566a;
 }
 .responsibility-list p {
   display: grid;
   grid-template-columns: 42px 1fr;
   gap: 1rem;
   margin: 0;
-  padding: 1.15rem 0;
+  padding: 1.15rem;
   border-bottom: 1px solid #49566a;
   color: #d5dce5;
 }
@@ -956,6 +967,7 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--navy);
+  border-left: 1px solid var(--line);
 }
 .values-grid article {
   min-height: 210px;
@@ -1013,9 +1025,11 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid #49566a;
+  border-left: 1px solid #49566a;
 }
 .software-list span {
-  padding: 1.2rem 0;
+  padding: 1.2rem;
+  border-right: 1px solid #49566a;
   border-bottom: 1px solid #49566a;
   font-family: var(--mono);
   font-size: 0.78rem;
@@ -1025,6 +1039,7 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--navy);
+  border-left: 1px solid var(--line);
 }
 .sector-detail article {
   min-height: 250px;
@@ -1045,6 +1060,7 @@ button {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 1px solid #49566a;
+  border-left: 1px solid #49566a;
 }
 .coordination-feature > div:last-child span {
   min-height: 110px;
@@ -1060,6 +1076,7 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid #49566a;
+  border-left: 1px solid #49566a;
 }
 .engagement > div:last-child p {
   margin: 0;
