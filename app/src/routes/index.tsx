@@ -105,7 +105,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="method-section">
+      <section id="method" className="method-section">
         <div className="page-section">
           <SectionLead
             index="02"

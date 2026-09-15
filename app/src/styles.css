@@ -457,21 +457,18 @@ button {
 }
 .method-line article {
   position: relative;
-  padding: 3rem 2.5rem 3.5rem 0;
+  min-height: 220px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
   border-right: 1px solid #415069;
+  border-bottom: 1px solid #415069;
 }
 .method-line article:not(:first-child) {
-  padding-left: 2.5rem;
+  padding-left: 1.75rem;
 }
 .method-line article:before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  top: -5px;
-  left: 0;
-  background: var(--gold);
+  display: none;
 }
 .method-line span,
 .why-grid span,
@@ -481,7 +478,7 @@ button {
   color: var(--gold);
 }
 .method-line h3 {
-  margin: 1.7rem 0 0.7rem;
+  margin: auto 0 0.7rem;
   font-size: 2rem;
   font-weight: 400;
 }
@@ -490,9 +487,8 @@ button {
   color: #aeb9c8;
 }
 .method-mantra {
-  margin: 4rem 0 0;
-  padding-top: 2rem;
-  border-top: 1px solid #415069;
+  margin: 1.75rem 0 0;
+  padding-top: 0;
   font-family: var(--mono);
   letter-spacing: 0.1em;
 }
@@ -1514,6 +1510,17 @@ button {
   }
   .outcome-grid article {
     min-height: 140px;
+  }
+  .method-line article,
+  .method-line article:not(:first-child) {
+    min-height: 155px;
+    padding: 1.4rem;
+  }
+  .method-line h3 {
+    font-size: 1.65rem;
+  }
+  .method-mantra {
+    line-height: 1.75;
   }
   .vision-grid {
     grid-template-columns: 1fr;
